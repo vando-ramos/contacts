@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div>
-    <h1>Contact List</h1>
-    <input type="text" placeholder="Contact">
-    <button onclick="printData()">Search</button>
-  </div>
-  
-  <ul id="result">    
-  </ul>
 
-  <script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Contact List</h1>
+
+        <button v-on:click="getData">Load Data</button>
+
+        <ul>
+            <li v-for="item in listContacts">
+                <address>
+                    <img v-bind:src="item.picture" alt="item.firstName">
+                    <br>
+                    {{item.firstName}} {{item.lastName}}
+                    <br>Email: {{item.email}}
+                    <br>City: {{item.city}}
+                </address>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
