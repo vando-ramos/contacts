@@ -32,23 +32,15 @@ li {
     padding: 5px 80px;
 }
 
-.button-load {
-    background-color: black;
-    color: white;
-    margin-left: 5px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
 input {
     font-size: 16px;
     padding: 10px 100px;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 input::placeholder {
     text-align: center;
+    font-size: 16px;
 }
 
 .alert-msg {

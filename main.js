@@ -1,14 +1,9 @@
 const app = Vue.createApp({
     data() {
         return {
-            searchText: '',
-            firstName: 'Vando',
-            lastName: 'Ramos',
-            email: 'vando@email.com',
-            city: 'Rio de Janeiro',
-            // picture: 'https://randomuser.me/api/?results=5',
+            searchText: '',            
 
-            listContacts: ['Vando', 'Alice', 'Jo']
+            listContacts: []
         }
     },
 
@@ -28,13 +23,17 @@ const app = Vue.createApp({
         }
     },
 
+    async mounted(){
+        this.listResult = await this.getData();
+    },
+
     methods:{
         changeData(){
             this.firstName = 'Ramos',
             this.lastName = 'Vando',
             this.email = 'vando@email.com',
             this.city = 'Rio de Janeiro'
-            // this.picture = 'https://randomuser.me/api/?results=5'
+            this.picture = 'https://randomuser.me/api/?results=5'
         },
 
         removeContact(index){
@@ -44,8 +43,6 @@ const app = Vue.createApp({
         async getData(){
 
             let response = await fetch('https://randomuser.me/api/?results=25');
-
-            // console.log(response.json());
 
             let data = await response.json();
 
@@ -61,8 +58,7 @@ const app = Vue.createApp({
                 contact.firstName = item.name.first;
                 contact.lastName = item.name.last;
                 contact.email = item.email;
-                contact.city = item.location.city;
-                
+                contact.city = item.location.city;                
 
                 this.listContacts.push(contact)
 
