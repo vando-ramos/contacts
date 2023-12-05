@@ -5,31 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="app">
-        <h1>Contact List</h1>
+        <div class="title">
+            <h1>Contact List</h1>
 
-        <input type="text" v-model="searchText" placeholder="Enter a name">
-       
-        <button v-on:click="getData">Load Data</button>
+            <input type="text" v-model="searchText" placeholder="Enter a name">
+            
+            <button class="button-load" v-on:click="getData">Load Data</button>               
 
-        <div v-if="listResult.length <= 0">
-            No contacts found!
-        </div>
+            <div class="alert-msg" v-if="listResult.length <= 0">
+                No contacts found!
+            </div>
+        </div> 
 
         <ul>
             <li v-for="item, index in listResult">
-                <address>
-                    <img v-bind:src="item.picture" alt="item.firstName">
-                    <br>
-                    {{item.firstName}} {{item.lastName}}
-                    <br>Email: {{item.email}}
-                    <br>City: {{item.city}}                    
-                </address>
+                <div class="card">
+                    <address>
+                        <img class="card-img" v-bind:src="item.picture" alt="item.firstName">
+                        <br>
+                        {{item.firstName}} {{item.lastName}}
+                        <br>Email: {{item.email}}
+                        <br>City: {{item.city}}                    
+                    </address>
 
-                <button v-on:click="removeContact(index)">Delete</button>
+                    <button class="button-delete" v-on:click="removeContact(index)">Delete</button>
+                </div>                
             </li>
         </ul>
     </div>

@@ -43,7 +43,7 @@ const app = Vue.createApp({
 
         async getData(){
 
-            let response = await fetch('https://randomuser.me/api/?results=5');
+            let response = await fetch('https://randomuser.me/api/?results=25');
 
             // console.log(response.json());
 

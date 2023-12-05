@@ -1,0 +1,58 @@
+body {
+    background-color: #f8f9fd;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+.card {
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+}
+
+.card-img {
+    border-radius: 50%;
+}
+
+.button-delete {
+    border-radius: 20px;
+    border: none;
+    background-color: red;
+    opacity: 0.7;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 5px 80px;
+}
+
+.button-load {
+    background-color: black;
+    color: white;
+    margin-left: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+input {
+    font-size: 16px;
+    padding: 10px 100px;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.alert-msg {
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
