@@ -37,6 +37,10 @@ const app = Vue.createApp({
             // this.picture = 'https://randomuser.me/api/?results=5'
         },
 
+        removeContact(index){
+            this.listContacts.splice(index, 1);
+        },
+
         async getData(){
 
             let response = await fetch('https://randomuser.me/api/?results=5');
