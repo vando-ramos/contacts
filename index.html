@@ -11,10 +11,16 @@
     <div id="app">
         <h1>Contact List</h1>
 
+        <input type="text" v-model="searchText" placeholder="Enter a name">
+       
         <button v-on:click="getData">Load Data</button>
 
+        <div v-if="listResult.length <= 0">
+            No contacts found!
+        </div>
+
         <ul>
-            <li v-for="item in listContacts">
+            <li v-for="item in listResult">
                 <address>
                     <img v-bind:src="item.picture" alt="item.firstName">
                     <br>

@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            searchText: '',
             firstName: 'Vando',
             lastName: 'Ramos',
             email: 'vando@email.com',
@@ -10,6 +11,23 @@ const app = Vue.createApp({
             listContacts: ['Vando', 'Alice', 'Jo']
         }
     },
+
+    computed:{
+        listResult(){
+
+            if(this.searchText){
+
+                return this.listContacts.filter(contact => {
+
+                    return contact.firstName.toLowerCase().includes(this.searchText.toLowerCase());
+                });
+            }else{
+
+                return this.listContacts;
+            }
+        }
+    },
+
     methods:{
         changeData(){
             this.firstName = 'Ramos',
